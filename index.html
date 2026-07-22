@@ -1,373 +1,250 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>its_roxio — Security & IT</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Portfolio of its_roxio — Security & IT specialist. Python, Java, Bash, SQL, Web & Network Security.">
-    <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <!-- Hacker-style monospace -->
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OSINT & Network Security Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<header class="site-header">
-    <div class="logo">
-        <span class="logo-mark">&gt;</span>
-        <span class="logo-text">its_roxio</span>
-    </div>
-    <nav class="nav">
-        <a href="#about">About</a>
-        <a href="#skills">Skills</a>
-        <a href="#projects">Projects</a>
-        <a href="#contacts">Contacts</a>
-    </nav>
-</header>
+    <header class="site-header">
+        <div class="container header-inner">
+            <div class="brand">
+                <span class="brand-mark">root@osint</span>
+            </div>
+            <nav class="nav">
+                <a href="#overview" class="nav-link">Overview</a>
+                <a href="#osint" class="nav-link">OSINT</a>
+                <a href="#network" class="nav-link">Network</a>
+                <a href="#cases" class="nav-link">Case Studies</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </nav>
+        </div>
+    </header>
 
-<main>
-    <!-- HERO: LEFT TEXT BLOCK + RIGHT TERMINAL -->
-    <section class="hero" id="top">
-        <!-- LEFT: auto-typing info block -->
-        <div class="hero-text">
-            <p class="hero-kicker">Security & IT specialist</p>
-            <h1>its_roxio</h1>
-            <p class="hero-subtitle">
-                <span id="hero-typing"></span><span class="cursor"></span>
-            </p>
-            <div class="hero-actions">
-                <a href="#projects" class="btn primary">View projects</a>
-                <a href="#contacts" class="btn ghost">Contact</a>
-            </div>
-        </div>
-
-        <!-- RIGHT: terminal-style block -->
-        <div class="hero-terminal">
-            <div class="terminal-header">
-                <span class="dot red"></span>
-                <span class="dot yellow"></span>
-                <span class="dot green"></span>
-                <span class="terminal-title">/home/its_roxio/portfolio.sh</span>
-            </div>
-            <div class="terminal-body">
-                <p>
-                    <span class="prompt">its_roxio@security-lab</span>:~$ 
-                    <span id="terminal-command"></span><span class="cursor"></span>
-                </p>
-                <div id="terminal-output"></div>
-            </div>
-        </div>
-    </section>
-
-    <!-- About -->
-    <section class="section" id="about">
-        <div class="section-header">
-            <h2>About</h2>
-            <p>Short overview</p>
-        </div>
-        <div class="section-content two-columns">
-            <div>
-                <p>
-                    I am a security & IT specialist working with Linux, networks and application security.
-                    I write tools and scripts in Python, Java, Bash, and SQL to automate routine tasks and
-                    help detect vulnerabilities.
-                </p>
-                <p>
-                    My focus is on Web & Network Security, combining development with security practices:
-                    vulnerability scanning, log analysis, secure configurations and threat detection.
-                </p>
-            </div>
-            <div class="about-list">
-                <h3>Focus domains</h3>
-                <ul>
-                    <li>Web & Network Security</li>
-                    <li>Linux & Windows hardening</li>
-                    <li>Automation & scripting</li>
-                    <li>Security monitoring & incident response</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <!-- Skills -->
-    <section class="section" id="skills">
-        <div class="section-header">
-            <h2>Skills</h2>
-            <p>Tech stack & security profile</p>
-        </div>
-        <div class="skills-grid">
-            <div class="skill-card">
-                <h3>Languages</h3>
-                <p>Python ◇ Java ◇ Bash ◇ SQL</p>
-            </div>
-            <div class="skill-card">
-                <h3>Operating Systems</h3>
-                <p>Linux ◇ Windows</p>
-            </div>
-            <div class="skill-card">
-                <h3>Frameworks & Standards</h3>
-                <p>Metasploit ◇ SOC 2 ◇ CIS</p>
-            </div>
-            <div class="skill-card">
-                <h3>Security & Networks</h3>
-                <p>OWASP Top‑10 ◇ OSI model ◇ TCP/IP ◇ Web & Network Security ◇ Team: White</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Projects -->
-    <section class="section" id="projects">
-        <div class="section-header">
-            <h2>Projects</h2>
-            <p>Examples of work</p>
-        </div>
-        <div class="projects-grid">
-            <article class="project-card">
-                <div class="project-header">
-                    <h3>Traffic Sentinel</h3>
-                    <span class="project-tag">Python · Network Security</span>
+    <main>
+        <section id="overview" class="section hero">
+            <div class="container hero-inner">
+                <div class="hero-text">
+                    <p class="hero-kicker">OSINT & Network Security</p>
+                    <h1 class="hero-title">Портфолио профессионального хакера / аналитика</h1>
+                    <p class="hero-subtitle">
+                        Я занимаюсь открытой разведкой (OSINT), анализом инфраструктуры и сетевой безопасности,
+                        разработкой утилит и методологий для технических и бизнес-исследований.
+                    </p>
+                    <div class="hero-actions">
+                        <a href="#osint" class="btn btn-primary">OSINT-проекты</a>
+                        <a href="#network" class="btn btn-outline">Сетевой анализ</a>
+                    </div>
+                    <div class="hero-meta">
+                        <span class="meta-pill">Arch / Windows</span>
+                        <span class="meta-pill">CLI tools</span>
+                        <span class="meta-pill">Reports & Playbooks</span>
+                    </div>
                 </div>
-                <p>
-                    Packet capture & analysis tool with suspicious pattern detection, built for deep networking & security monitoring practice.
-                </p>
-                <ul class="project-meta">
-                    <li>Traffic inspection & filtering</li>
-                    <li>Basic anomaly detection</li>
-                    <li>Foundation for IDS/IPS ideas</li>
-                </ul>
-                <a class="project-link" href="https://github.com/its-roxio" target="_blank" rel="noopener">
-                    view on GitHub →
-                </a>
-            </article>
-
-            <article class="project-card">
-                <div class="project-header">
-                    <h3>VulnProbe</h3>
-                    <span class="project-tag">Python · Web Security</span>
+                <div class="hero-panel">
+                    <div class="terminal">
+                        <div class="terminal-header">
+                            <span class="dot dot-blue"></span>
+                            <span class="dot dot-cyan"></span>
+                            <span class="dot dot-white"></span>
+                            <span class="terminal-title">session.log</span>
+                        </div>
+                        <div class="terminal-body">
+                            <p>$ whoami</p>
+                            <p>osint_network_engineer</p>
+                            <p>$ focus</p>
+                            <p>- infrastructure profiling</p>
+                            <p>- domain &amp; hosting intelligence</p>
+                            <p>- network recon &amp; reporting</p>
+                            <p>$ tools</p>
+                            <p>- custom OSINT CLI</p>
+                            <p>- nmap / traceroute / ssl scan</p>
+                        </div>
+                    </div>
                 </div>
-                <p>
-                    Lightweight scanner for common web issues: OWASP Top‑10 checks, HTTP header inspection, and HTML reporting.
-                </p>
-                <ul class="project-meta">
-                    <li>OWASP Top‑10 oriented checks</li>
-                    <li>Security headers inspection</li>
-                    <li>Simple reports for developers</li>
-                </ul>
-                <a class="project-link" href="https://github.com/its-roxio" target="_blank" rel="noopener">
-                    view on GitHub →
-                </a>
-            </article>
+            </div>
+        </section>
 
-            <article class="project-card">
-                <div class="project-header">
-                    <h3>CredVault</h3>
-                    <span class="project-tag">Java · Crypto</span>
+        <section id="osint" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>OSINT-проекты и инструменты</h2>
+                    <p>Практические исследования, собственные утилиты и методологии открытой разведки.</p>
                 </div>
-                <p>
-                    Encrypted credential manager with strong password generation and secure local storage for developers & admins.
-                </p>
-                <ul class="project-meta">
-                    <li>Local encrypted storage</li>
-                    <li>Strong password generator</li>
-                    <li>Security-focused UX</li>
-                </ul>
-                <a class="project-link" href="https://github.com/its-roxio" target="_blank" rel="noopener">
-                    view on GitHub →
-                </a>
-            </article>
-
-            <article class="project-card">
-                <div class="project-header">
-                    <h3>LogWatch</h3>
-                    <span class="project-tag">Bash · Python · Linux</span>
+                <div class="grid grid-3">
+                    <article class="card">
+                        <h3>OSINT CLI-утилита</h3>
+                        <p>
+                            Кроссплатформенный инструмент для сбора максимум информации о доменах, сайтах и серверах:
+                            HTTP-заголовки, DNS/WHOIS, SSL, техстек, поддомены, порт-скан.
+                        </p>
+                        <ul class="card-list">
+                            <li>JSON/Markdown отчёты</li>
+                            <li>Интеграция с внешними сервисами</li>
+                            <li>Фокус на структуре и повторяемости</li>
+                        </ul>
+                        <div class="card-footer">
+                            <span class="tag">Python</span>
+                            <span class="tag">CLI</span>
+                            <span class="tag">OSINT</span>
+                        </div>
+                    </article>
+                    <article class="card">
+                        <h3>Методология OSINT</h3>
+                        <p>
+                            Формализованный пайплайн: постановка задачи, сбор открытых данных, корреляция,
+                            валидация, формирование отчёта с выводами и рекомендациями.
+                        </p>
+                        <ul class="card-list">
+                            <li>Чёткие этапы и чек-листы</li>
+                            <li>Фокус на доказательствах и источниках</li>
+                            <li>Пригодно для тех и нетех заказчиков</li>
+                        </ul>
+                        <div class="card-footer">
+                            <span class="tag">Playbooks</span>
+                            <span class="tag">Reports</span>
+                        </div>
+                    </article>
+                    <article class="card">
+                        <h3>OSINT-отчёты</h3>
+                        <p>
+                            Подборка анонимизированных кейсов: анализ компаний, инфраструктуры, цифровых следов,
+                            рисков и возможных векторов атак.
+                        </p>
+                        <ul class="card-list">
+                            <li>Чёткая структура отчёта</li>
+                            <li>Визуализация ключевых находок</li>
+                            <li>Практические рекомендации</li>
+                        </ul>
+                        <div class="card-footer">
+                            <span class="tag">Case Studies</span>
+                            <span class="tag">Risk Analysis</span>
+                        </div>
+                    </article>
                 </div>
-                <p>
-                    Log aggregation & anomaly detection scripts for SSH and web server logs, focused on brute‑force & suspicious IP activity.
-                </p>
-                <ul class="project-meta">
-                    <li>Aggregation of SSH & web logs</li>
-                    <li>Highlight suspicious IPs</li>
-                    <li>Useful for incident response</li>
-                </ul>
-                <a class="project-link" href="https://github.com/its-roxio" target="_blank" rel="noopener">
-                    view on GitHub →
-                </a>
-            </article>
-        </div>
-    </section>
-
-    <!-- Contacts -->
-    <section class="section" id="contacts">
-        <div class="section-header">
-            <h2>Contacts</h2>
-            <p>How to reach me</p>
-        </div>
-        <div class="contacts-grid">
-            <div class="contact-card">
-                <span class="contact-label">GitHub</span>
-                <a href="https://github.com/its-roxio" target="_blank" rel="noopener">
-                    its-roxio
-                </a>
             </div>
-            <div class="contact-card">
-                <span class="contact-label">Telegram</span>
-                <a href="https://t.me/its_roxio" target="_blank" rel="noopener">
-                    @its_roxio
-                </a>
+        </section>
+
+        <section id="network" class="section section-alt">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Сети и инфраструктура</h2>
+                    <p>Сетевой анализ, профилирование инфраструктуры и рекомендации по защите.</p>
+                </div>
+                <div class="grid grid-2">
+                    <article class="card card-outline">
+                        <h3>Сетевой стек и инструменты</h3>
+                        <p>
+                            Практический опыт работы с Nmap, traceroute, Wireshark, SSL/TLS анализом, WAF и
+                            сетевой инфраструктурой.
+                        </p>
+                        <ul class="card-list">
+                            <li>Сканирование периметра</li>
+                            <li>Профилирование сервисов и портов</li>
+                            <li>Трассировка маршрутов и узлов</li>
+                        </ul>
+                        <div class="card-footer">
+                            <span class="tag">Network</span>
+                            <span class="tag">Recon</span>
+                        </div>
+                    </article>
+                    <article class="card card-outline">
+                        <h3>Инфраструктурные кейсы</h3>
+                        <p>
+                            Аудит конфигураций, выявление слабых мест в архитектуре, рекомендации по
+                            сегментации, мониторингу и защищённым каналам.
+                        </p>
+                        <ul class="card-list">
+                            <li>Моделирование угроз инфраструктуре</li>
+                            <li>Приоритизация уязвимостей</li>
+                            <li>Пошаговый план улучшений</li>
+                        </ul>
+                        <div class="card-footer">
+                            <span class="tag">Infra</span>
+                            <span class="tag">Hardening</span>
+                        </div>
+                    </article>
+                </div>
             </div>
-            <div class="contact-card">
-                <span class="contact-label">Discord</span>
-                <span>its_roxio#0000</span>
+        </section>
+
+        <section id="cases" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Case Studies</h2>
+                    <p>Примеры реальной работы: от разведки до отчётов и решений.</p>
+                </div>
+                <div class="case-grid">
+                    <article class="case">
+                        <h3>Анализ цифрового следа компании</h3>
+                        <p>
+                            Полный OSINT-профиль: домены, инфраструктура, публичные сервисы, ключевые лица,
+                            потенциальные риски и рекомендации.
+                        </p>
+                        <div class="case-meta">
+                            <span class="tag">OSINT</span>
+                            <span class="tag">Corporate</span>
+                        </div>
+                    </article>
+                    <article class="case">
+                        <h3>Профилирование сетевого периметра</h3>
+                        <p>
+                            Сканирование и анализ внешнего периметра, выявление избыточно открытых сервисов,
+                            оценка рисков и подготовка плана закрытия.
+                        </p>
+                        <div class="case-meta">
+                            <span class="tag">Network</span>
+                            <span class="tag">Perimeter</span>
+                        </div>
+                    </article>
+                    <article class="case">
+                        <h3>Исследовательские утилиты</h3>
+                        <p>
+                            Разработка и поддержка инструментов для системного OSINT и сетевого анализа,
+                            адаптация под разные окружения и задачи.
+                        </p>
+                        <div class="case-meta">
+                            <span class="tag">Tools</span>
+                            <span class="tag">Research</span>
+                        </div>
+                    </article>
+                </div>
             </div>
+        </section>
+
+        <section id="contact" class="section section-alt">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Контакты</h2>
+                    <p>Готов обсудить исследования, аудит инфраструктуры и разработки под конкретные задачи.</p>
+                </div>
+                <div class="contact-grid">
+                    <div class="contact-block">
+                        <h3>Технические каналы</h3>
+                        <ul class="contact-list">
+                            <li>GitHub: &lt;ссылка на репозиторий OSINT-утилиты&gt;</li>
+                            <li>Git: &lt;основной профиль&gt;</li>
+                            <li>PGP: &lt;fingerprint&gt;</li>
+                        </ul>
+                    </div>
+                    <div class="contact-block">
+                        <h3>Связь</h3>
+                        <ul class="contact-list">
+                            <li>Email: &lt;рабочий адрес&gt;</li>
+                            <li>Telegram: &lt;ник&gt;</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-inner">
+            <p>OSINT &amp; Network Security Portfolio · root@osint</p>
+            <p>Сделано для практических исследований и профессиональных проектов.</p>
         </div>
-    </section>
-</main>
-
-<footer class="site-footer">
-    <p>© <span id="year"></span> its_roxio — Security & IT</p>
-</footer>
-
-<script>
-    // Footer year
-    document.getElementById('year').textContent = new Date().getFullYear();
-
-    // HERO auto-typing text (left block) with 30s delay before clearing
-    const heroLines = [
-        "security ◇ web ◇ network",
-        "team ➤ white ◆ offensive & defensive mindset",
-        "stack ➤ Python ◆ Java ◆ Bash ◆ SQL",
-        "OS ➤ Linux ◆ Windows ◇ tools ➤ Metasploit ◆ SOC 2 ◆ CIS"
-    ];
-
-    const heroEl = document.getElementById("hero-typing");
-    const typingSpeedHero = 55;
-    const linePauseHero = 900;
-    const cyclePauseHero = 30000;
-
-    let heroLineIndex = 0;
-    let heroCharIndex = 0;
-    let heroIsTyping = true;
-
-    function clearHero() {
-        heroEl.textContent = "";
-    }
-
-    function heroLoop() {
-        const currentLine = heroLines[heroLineIndex];
-
-        if (heroIsTyping) {
-            if (heroCharIndex < currentLine.length) {
-                heroEl.textContent += currentLine.charAt(heroCharIndex);
-                heroCharIndex++;
-                setTimeout(heroLoop, typingSpeedHero);
-            } else {
-                heroIsTyping = false;
-                heroCharIndex = 0;
-                setTimeout(heroLoop, linePauseHero);
-            }
-        } else {
-            // переключаемся на следующую строку
-            heroLineIndex = (heroLineIndex + 1) % heroLines.length;
-            heroEl.textContent = "";
-            heroIsTyping = true;
-
-            // если цикл вернулся к первой строке — даём тексту висеть 30 сек перед очисткой
-            if (heroLineIndex === 0) {
-                setTimeout(clearHero, cyclePauseHero);
-            }
-
-            setTimeout(heroLoop, cyclePauseHero);
-        }
-    }
-
-    heroLoop();
-
-    // Terminal auto-typing (right block) — можно оставить как раньше или упростить:
-    const terminalLines = [
-        {
-            cmd: "whoami",
-            output: [
-                "nickname ➤ its_roxio",
-                "role     ➤ security & it specialist"
-            ]
-        },
-        {
-            cmd: "skills",
-            output: [
-                "langs    ➤ Python ◆ Java ◆ Bash ◆ SQL",
-                "OS       ➤ Linux ◆ Windows"
-            ]
-        },
-        {
-            cmd: "security",
-            output: [
-                "frameworks ➤ Metasploit ◆ SOC 2 ◆ CIS",
-                "focus      ➤ OWASP Top‑10 ◆ OSI ◆ TCP/IP ◆ Web & Network Security"
-            ]
-        },
-        {
-            cmd: "contact",
-            output: [
-                "github   ➤ https://github.com/its-roxio",
-                "telegram ➤ @its_roxio",
-                "discord  ➤ its_roxio#0000"
-            ]
-        }
-    ];
-
-    const typingSpeedTerminal = 55;
-    const lineDelayTerminal = 650;
-    const cmdDelayTerminal = 1200;
-
-    const terminalCmdEl = document.getElementById("terminal-command");
-    const terminalOutEl = document.getElementById("terminal-output");
-
-    let terminalIndex = 0;
-    let terminalCharIndex = 0;
-    let terminalIsTypingCmd = true;
-    let terminalOutputLineIndex = 0;
-
-    function clearTerminalOutput() {
-        terminalOutEl.innerHTML = "";
-    }
-
-    function terminalLoop() {
-        const current = terminalLines[terminalIndex];
-
-        if (terminalIsTypingCmd) {
-            if (terminalCharIndex < current.cmd.length) {
-                terminalCmdEl.textContent += current.cmd.charAt(terminalCharIndex);
-                terminalCharIndex++;
-                setTimeout(terminalLoop, typingSpeedTerminal);
-            } else {
-                terminalIsTypingCmd = false;
-                terminalCharIndex = 0;
-                setTimeout(terminalLoop, lineDelayTerminal);
-            }
-        } else {
-            if (terminalOutputLineIndex < current.output.length) {
-                const lineText = current.output[terminalOutputLineIndex];
-                const lineEl = document.createElement("p");
-                lineEl.textContent = lineText;
-                terminalOutEl.appendChild(lineEl);
-                terminalOutputLineIndex++;
-                setTimeout(terminalLoop, lineDelayTerminal);
-            } else {
-                terminalIndex = (terminalIndex + 1) % terminalLines.length;
-                terminalCmdEl.textContent = "";
-                terminalOutputLineIndex = 0;
-                terminalIsTypingCmd = true;
-
-                if (terminalIndex === 0) {
-                    clearTerminalOutput();
-                }
-
-                setTimeout(terminalLoop, cmdDelayTerminal);
-            }
-        }
-    }
-
-    terminalLoop();
-</script>
+    </footer>
 </body>
 </html>
