@@ -31,7 +31,7 @@
             <p class="hero-kicker">Programmer & Security Specialist</p>
             <h1>Nik / <span class="accent">its_roxio</span></h1>
             <p class="hero-subtitle">
-                Программист и специалист по информационной безопасности.<br>
+                Программист и специалист по информационной безопасности и ИТ.<br>
                 Python, Java, автоматизация, анализ уязвимостей, защита инфраструктуры.
             </p>
             <div class="hero-actions">
@@ -47,15 +47,12 @@
                 <span class="dot green"></span>
                 <span class="terminal-title">/home/its_roxio/portfolio.sh</span>
             </div>
-            <div class="terminal-body" id="terminal-body">
-                <p><span class="prompt">nik@security-lab</span>:~$ whoami</p>
-                <p>nik (its_roxio)</p>
-                <p><span class="prompt">nik@security-lab</span>:~$ roles</p>
-                <p>Programmer · Security & IT Specialist</p>
-                <p><span class="prompt">nik@security-lab</span>:~$ stack</p>
-                <p>Python, Java, Networking, Linux, Web Security, Automation</p>
-                <p><span class="prompt">nik@security-lab</span>:~$ mission</p>
-                <p>Building secure systems, automating routine, finding & fixing vulnerabilities.</p>
+            <div class="terminal-body">
+                <p>
+                    <span class="prompt">nik@security-lab</span>:~$ 
+                    <span id="terminal-command"></span><span class="cursor"></span>
+                </p>
+                <div id="terminal-output"></div>
             </div>
         </div>
     </section>
@@ -239,7 +236,7 @@
             </div>
             <div class="contact-card">
                 <span class="contact-label">Email</span>
-                <span>its_roxio@mail.ru</span>
+                <span>добавьте ваш адрес здесь</span>
             </div>
         </div>
     </section>
@@ -252,6 +249,74 @@
 <script>
     // Год в футере
     document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Анимация терминала
+    const commands = [
+        { cmd: "whoami", output: ["nik (its_roxio)"] },
+        { cmd: "roles", output: ["Programmer · Security & IT Specialist"] },
+        { cmd: "stack", output: ["Python, Java, Networking, Linux, Web Security, Automation"] },
+        { cmd: "mission", output: ["Building secure systems, automating routine, finding & fixing vulnerabilities."] }
+    ];
+
+    const typingSpeed = 60;     // скорость печати символов (мс)
+    const lineDelay = 700;      // пауза после вывода строки (мс)
+    const commandDelay = 900;   // пауза между командами (мс)
+
+    const commandEl = document.getElementById("terminal-command");
+    const outputEl = document.getElementById("terminal-output");
+
+    let commandIndex = 0;
+    let charIndex = 0;
+    let isTypingCommand = true;
+    let currentOutputLineIndex = 0;
+
+    function clearOutput() {
+        outputEl.innerHTML = "";
+    }
+
+    function typeLoop() {
+        const current = commands[commandIndex];
+
+        if (isTypingCommand) {
+            if (charIndex < current.cmd.length) {
+                commandEl.textContent += current.cmd.charAt(charIndex);
+                charIndex++;
+                setTimeout(typeLoop, typingSpeed);
+            } else {
+                // Команда дописана, пауза перед выводом
+                isTypingCommand = false;
+                charIndex = 0;
+                setTimeout(typeLoop, lineDelay);
+            }
+        } else {
+            // Печатаем строки вывода по очереди
+            if (currentOutputLineIndex < current.output.length) {
+                const lineText = current.output[currentOutputLineIndex];
+                const lineEl = document.createElement("p");
+                lineEl.textContent = lineText;
+                outputEl.appendChild(lineEl);
+                currentOutputLineIndex++;
+
+                setTimeout(typeLoop, lineDelay);
+            } else {
+                // Переход к следующей команде
+                commandIndex = (commandIndex + 1) % commands.length;
+                commandEl.textContent = "";
+                currentOutputLineIndex = 0;
+                isTypingCommand = true;
+
+                // Если вернулись к первой команде — очищаем вывод (зацикленный эффект)
+                if (commandIndex === 0) {
+                    clearOutput();
+                }
+
+                setTimeout(typeLoop, commandDelay);
+            }
+        }
+    }
+
+    // Старт анимации
+    typeLoop();
 </script>
 </body>
 </html>
