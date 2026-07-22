@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -141,6 +140,100 @@
     // Footer year
     document.getElementById('year').textContent = new Date().getFullYear();
 
+    // LEFT: auto-typing intro terminal (Variant 1-style)
+    const introLines = [
+        {
+            cmd: "whoami",
+            output: [
+                "nickname ➤ its_roxio",
+                "team ➤ white ◇ web ◇ network ◇ security"
+            ]
+        },
+        {
+            cmd: "contact",
+            output: [
+                "github ➤ https://github.com/its-roxio",
+                "telegram ➤ @its_roxio",
+                "discord ➤ its_roxio#0000"
+            ]
+        },
+        {
+            cmd: "stack",
+            output: [
+                "langs ➤ Python ◆ Java ◆ Bash ◆ SQL",
+                "os ➤ Linux ◆ Windows",
+                "frameworks ➤ Metasploit ◆ SOC 2 ◆ CIS",
+                "focus ➤ OWASP Top‑10 ◆ OSI ◆ TCP/IP"
+            ]
+        },
+        {
+            cmd: "domains",
+            output: [
+                "security-domains ➤ web ◇ network ◇ infrastructure"
+            ]
+        }
+    ];
+
+    const typingSpeedIntro = 55;      // скорость печати символов (мс)
+    const lineDelayIntro  = 650;      // пауза между строками вывода (мс)
+    const cmdDelayIntro   = 30000;    // ПАУЗА МЕЖДУ КОМАНДАМИ / ЦИКЛАМИ: 30 секунд
+
+    const introCmdEl = document.getElementById("terminal-command");
+    const introOutEl = document.getElementById("terminal-output");
+
+    let introIndex = 0;
+    let introCharIndex = 0;
+    let introIsTypingCmd = true;
+    let introOutputLineIndex = 0;
+
+    function clearIntroOutput() {
+        introOutEl.innerHTML = "";
+    }
+
+    function introLoop() {
+        const current = introLines[introIndex];
+
+        if (introIsTypingCmd) {
+            // печатаем команду
+            if (introCharIndex < current.cmd.length) {
+                introCmdEl.textContent += current.cmd.charAt(introCharIndex);
+                introCharIndex++;
+                setTimeout(introLoop, typingSpeedIntro);
+            } else {
+                // команда дописана, пауза перед выводом
+                introIsTypingCmd = false;
+                introCharIndex = 0;
+                setTimeout(introLoop, lineDelayIntro);
+            }
+        } else {
+            // печатаем строки вывода по очереди
+            if (introOutputLineIndex < current.output.length) {
+                const lineText = current.output[introOutputLineIndex];
+                const lineEl = document.createElement("p");
+                lineEl.textContent = lineText;
+                introOutEl.appendChild(lineEl);
+                introOutputLineIndex++;
+                setTimeout(introLoop, lineDelayIntro);
+            } else {
+                // переход к следующей команде
+                introIndex = (introIndex + 1) % introLines.length;
+                introCmdEl.textContent = "";
+                introOutputLineIndex = 0;
+                introIsTypingCmd = true;
+
+                // когда возвращаемся к первой команде — даём тексту повисеть 30 сек,
+                // затем очищаем вывод и начинаем новый цикл
+                if (introIndex === 0) {
+                    setTimeout(clearIntroOutput, 30000);
+                }
+
+                setTimeout(introLoop, cmdDelayIntro);
+            }
+        }
+    }
+
+    introLoop();
+
     // RIGHT: interactive CLI-style menu terminal
     const menuOutputEl = document.getElementById("menu-output");
 
@@ -174,7 +267,7 @@
         contact: [
             "github   ➤ https://github.com/its-roxio",
             "telegram ➤ @its_roxio",
-            "discord  ➤ its_roxio"
+            "discord  ➤ its_roxio#0000"
         ]
     };
 
