@@ -156,39 +156,99 @@ main {
     gap: 12px;
 }
 
+/* Buttons with animated hover */
+
 .btn {
+    position: relative;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    padding: 9px 16px;
+    padding: 9px 18px;
     border-radius: 999px;
     font-size: 13px;
     font-weight: 500;
     text-decoration: none;
     cursor: pointer;
     border: 1px solid transparent;
-    transition: background 0.2s ease, color 0.2s ease, transform 0.08s ease;
+    transition:
+        background 0.25s ease,
+        color 0.25s ease,
+        transform 0.12s ease,
+        box-shadow 0.25s ease,
+        border-color 0.25s ease;
+    overflow: hidden;
 }
 
+/* базовый вид primary */
 .btn.primary {
     background: var(--accent);
     color: #020309;
     box-shadow: 0 14px 30px rgba(79, 209, 197, 0.35);
 }
 
-.btn.primary:hover {
-    transform: translateY(-1px);
-    background: #5fe0d4;
-}
-
+/* базовый вид ghost */
 .btn.ghost {
     border-color: rgba(255, 255, 255, 0.14);
     color: var(--text-main);
     background: rgba(255, 255, 255, 0.02);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.6);
 }
 
+/* glow-ореол вокруг кнопки с градиентом */
+.btn::before {
+    content: "";
+    position: absolute;
+    inset: -40%;
+    background: radial-gradient(circle at 10% 0%, rgba(79, 209, 197, 0.35), transparent 55%);
+    opacity: 0;
+    transform: scale(0.8);
+    transition:
+        opacity 0.25s ease,
+        transform 0.25s ease;
+    pointer-events: none;
+}
+
+/* аккуратная тонкая подсветка границы */
+.btn::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    border: 1px solid rgba(79, 209, 197, 0.0);
+    box-shadow: 0 0 0 rgba(79, 209, 197, 0);
+    transition:
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
+    pointer-events: none;
+}
+
+/* hover-состояние — лёгкий подъём */
+.btn:hover {
+    transform: translateY(-1px);
+}
+
+/* акцент для primary при hover */
+.btn.primary:hover {
+    background: #5fe0d4;
+    box-shadow: 0 20px 40px rgba(79, 209, 197, 0.45);
+}
+
+/* акцент для ghost при hover */
 .btn.ghost:hover {
     background: rgba(255, 255, 255, 0.06);
+    border-color: rgba(79, 209, 197, 0.6);
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.8);
+}
+
+/* включаем glow-подложку и подсветку границы при hover */
+.btn:hover::before {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.btn:hover::after {
+    border-color: rgba(79, 209, 197, 0.6);
+    box-shadow: 0 0 12px rgba(79, 209, 197, 0.55);
 }
 
 /* Terminal */
@@ -244,6 +304,32 @@ main {
     color: var(--accent);
 }
 
+/* typing cursor + вывод */
+
+.cursor {
+    display: inline-block;
+    width: 8px;
+    height: 14px;
+    margin-left: 2px;
+    background: #cbd5f5;
+    animation: blink-cursor 0.9s steps(2, start) infinite;
+    vertical-align: text-bottom;
+}
+
+#terminal-command {
+    white-space: nowrap;
+}
+
+#terminal-output p {
+    margin: 0 0 4px;
+    color: #9ca7d9;
+}
+
+@keyframes blink-cursor {
+    0%, 50% { opacity: 1; }
+    50.01%, 100% { opacity: 0; }
+}
+
 /* Sections */
 
 .section {
@@ -282,197 +368,4 @@ main {
 
 .about-list ul {
     list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.about-list li {
-    font-size: 14px;
-    color: var(--text-muted);
-    margin-bottom: 6px;
-    position: relative;
-    padding-left: 16px;
-}
-
-.about-list li::before {
-    content: "•";
-    position: absolute;
-    left: 0;
-    top: 0;
-    color: var(--accent);
-}
-
-/* Skills */
-
-.skills-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 18px;
-}
-
-.skill-card {
-    background: var(--bg-elevated);
-    border-radius: var(--radius-md);
-    padding: 16px 15px;
-    border: 1px solid rgba(255, 255, 255, 0.04);
-}
-
-.skill-card h3 {
-    font-size: 15px;
-    margin: 0 0 10px;
-}
-
-.skill-card ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.skill-card li {
-    font-size: 13px;
-    color: var(--text-muted);
-    margin-bottom: 6px;
-}
-
-/* Projects */
-
-.projects-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 18px;
-}
-
-.project-card {
-    background: var(--bg-elevated);
-    border-radius: var(--radius-md);
-    padding: 16px 15px 14px;
-    border: 1px solid rgba(255, 255, 255, 0.04);
-    position: relative;
-    overflow: hidden;
-}
-
-.project-card::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: radial-gradient(circle at 0 0, var(--accent-soft), transparent 60%);
-    opacity: 0;
-    transition: opacity 0.2s ease;
-    pointer-events: none;
-}
-
-.project-card:hover::before {
-    opacity: 1;
-}
-
-.project-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    gap: 10px;
-    margin-bottom: 8px;
-}
-
-.project-header h3 {
-    font-size: 15px;
-    margin: 0;
-}
-
-.project-tag {
-    font-size: 11px;
-    color: var(--accent);
-    text-transform: uppercase;
-    letter-spacing: 0.12em;
-}
-
-.project-card p {
-    font-size: 13px;
-    color: var(--text-muted);
-    margin: 0 0 10px;
-}
-
-.project-meta {
-    list-style: none;
-    padding: 0;
-    margin: 0 0 10px;
-}
-
-.project-meta li {
-    font-size: 12px;
-    color: #a7b4e5;
-    margin-bottom: 4px;
-}
-
-.project-link {
-    font-size: 12px;
-    color: var(--accent);
-    text-decoration: none;
-}
-
-.project-link:hover {
-    text-decoration: underline;
-}
-
-/* Contacts */
-
-.contacts-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
-    gap: 16px;
-}
-
-.contact-card {
-    background: var(--bg-elevated);
-    border-radius: var(--radius-md);
-    padding: 12px 13px;
-    border: 1px solid rgba(255, 255, 255, 0.04);
-    font-size: 13px;
-}
-
-.contact-label {
-    display: block;
-    font-size: 11px;
-    text-transform: uppercase;
-    letter-spacing: 0.16em;
-    color: var(--text-muted);
-    margin-bottom: 6px;
-}
-
-.contact-card a {
-    color: var(--text-main);
-    text-decoration: none;
-}
-
-.contact-card a:hover {
-    color: var(--accent);
-}
-
-/* Responsive */
-
-@media (max-width: 900px) {
-    .hero {
-        grid-template-columns: 1fr;
-    }
-
-    .hero-text, .hero-terminal {
-        box-shadow: 0 14px 32px rgba(0, 0, 0, 0.75);
-    }
-
-    main {
-        padding-top: 80px;
-    }
-}
-
-@media (max-width: 640px) {
-    .nav {
-        display: none;
-    }
-
-    .section-content.two-columns {
-        grid-template-columns: 1fr;
-    }
-
-    .hero h1 {
-        font-size: 26px;
-    }
-}
+    
