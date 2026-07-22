@@ -8,140 +8,129 @@
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <!-- Hacker-style fonts: JetBrains Mono + Fira Code-style vibe -->
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-<div class="page-shell">
+<div class="page-frame">
 
-    <!-- LEFT: auto-typing terminal with profile + contacts -->
-    <section class="pane pane-left">
-        <div class="terminal-window">
-            <div class="terminal-header">
-                <span class="dot red"></span>
-                <span class="dot yellow"></span>
-                <span class="dot green"></span>
-                <span class="terminal-title">/home/its_roxio/portfolio.sh</span>
-            </div>
-            <div class="terminal-body">
-                <p>
-                    <span class="prompt">its_roxio@security-lab</span>
-                    <span class="separator">::</span>
-                    <span class="location">~/intro</span>
-                    <span class="separator">$</span>
-                    <span id="terminal-command"></span><span class="cursor"></span>
-                </p>
-                <div id="terminal-output"></div>
-            </div>
+    <!-- LEFT VERTICAL LABEL WITH NICKNAME -->
+    <aside class="nickname-label">
+        <div class="nickname-inner">
+            <span class="nickname-prefix">user</span>
+            <span class="nickname-main">its_roxio</span>
+            <span class="nickname-role">security ◇ it</span>
         </div>
-    </section>
+    </aside>
 
-    <!-- RIGHT: interactive menu terminal -->
-    <section class="pane pane-right">
-        <div class="terminal-window">
-            <div class="terminal-header">
-                <span class="dot red"></span>
-                <span class="dot yellow"></span>
-                <span class="dot green"></span>
-                <span class="terminal-title">/home/its_roxio/menu.sh</span>
-            </div>
-            <div class="terminal-body terminal-body-menu" id="menu-terminal">
-                <p>
-                    <span class="prompt">its_roxio@security-lab</span>
-                    <span class="separator">::</span>
-                    <span class="location">~/menu</span>
-                    <span class="separator">$</span>
-                    <span class="menu-hint">type a command or click</span>
-                </p>
+    <!-- RIGHT MAIN TERMINAL AREA -->
+    <div class="main-area">
 
-                <div class="menu-commands">
-                    <button class="menu-btn" data-command="help">help ▸ show available commands</button>
-                    <button class="menu-btn" data-command="whoami">whoami ▸ about me</button>
-                    <button class="menu-btn" data-command="skills">skills ▸ technical profile</button>
-                    <button class="menu-btn" data-command="projects">projects ▸ featured work</button>
-                    <button class="menu-btn" data-command="contact">contact ▸ how to reach me</button>
+        <!-- INTERACTIVE TERMINAL (variant 4 style) -->
+        <section class="terminal-shell">
+            <div class="terminal-window">
+                <div class="terminal-header">
+                    <span class="dot red"></span>
+                    <span class="dot yellow"></span>
+                    <span class="dot green"></span>
+                    <span class="terminal-title">/home/its_roxio/menu.sh</span>
                 </div>
+                <div class="terminal-body terminal-body-menu" id="menu-terminal">
+                    <p>
+                        <span class="prompt">its_roxio@security-lab</span>
+                        <span class="separator">::</span>
+                        <span class="location">~/menu</span>
+                        <span class="separator">$</span>
+                        <span class="menu-hint">type a command or click</span>
+                    </p>
 
-                <div class="menu-output" id="menu-output"></div>
+                    <div class="menu-commands">
+                        <button class="menu-btn" data-command="help">help ▸ show available commands</button>
+                        <button class="menu-btn" data-command="whoami">whoami ▸ about me</button>
+                        <button class="menu-btn" data-command="skills">skills ▸ technical profile</button>
+                        <button class="menu-btn" data-command="projects">projects ▸ featured work</button>
+                        <button class="menu-btn" data-command="contact">contact ▸ how to reach me</button>
+                    </div>
+
+                    <div class="menu-output" id="menu-output"></div>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
+
+        <!-- INFO BLOCKS UNDER TERMINAL -->
+        <main class="info-main">
+            <section class="info-section">
+                <h2>Profile & Stack</h2>
+                <div class="info-grid">
+                    <article class="info-card">
+                        <h3>Languages</h3>
+                        <p>Python ◇ Java ◇ Bash ◇ SQL</p>
+                    </article>
+                    <article class="info-card">
+                        <h3>Operating Systems</h3>
+                        <p>Linux ◇ Windows</p>
+                    </article>
+                    <article class="info-card">
+                        <h3>Frameworks & Standards</h3>
+                        <p>Metasploit ◇ SOC 2 ◇ CIS</p>
+                    </article>
+                    <article class="info-card">
+                        <h3>Security & Networks</h3>
+                        <p>OWASP Top‑10 ◇ OSI model ◇ TCP/IP ◇ Web & Network Security ◇ Team: White</p>
+                    </article>
+                </div>
+            </section>
+
+            <section class="info-section" id="projects-section">
+                <h2>Projects</h2>
+                <div class="info-grid projects-grid">
+                    <article class="info-card project-card">
+                        <h3>Traffic Sentinel</h3>
+                        <p>Python ◇ Network Security</p>
+                        <p class="project-desc">
+                            Packet capture & analysis tool with suspicious pattern detection, built for deep networking & security monitoring practice.
+                        </p>
+                        <a href="https://github.com/its-roxio" class="project-link" target="_blank" rel="noopener">
+                            view on GitHub →
+                        </a>
+                    </article>
+
+                    <article class="info-card project-card">
+                        <h3>VulnProbe</h3>
+                        <p>Python ◇ Web Security</p>
+                        <p class="project-desc">
+                            Lightweight scanner for common web issues: OWASP Top‑10 checks, HTTP header inspection, and simple HTML reporting.
+                        </p>
+                        <a href="https://github.com/its-roxio" class="project-link" target="_blank" rel="noopener">
+                            view on GitHub →
+                        </a>
+                    </article>
+
+                    <article class="info-card project-card">
+                        <h3>CredVault</h3>
+                        <p>Java ◇ Crypto</p>
+                        <p class="project-desc">
+                            Encrypted credential manager with strong password generation and secure local storage for developers & admins.
+                        </p>
+                        <a href="https://github.com/its-roxio" class="project-link" target="_blank" rel="noopener">
+                            view on GitHub →
+                        </a>
+                    </article>
+
+                    <article class="info-card project-card">
+                        <h3>LogWatch</h3>
+                        <p>Bash ◇ Python ◇ Linux</p>
+                        <p class="project-desc">
+                            Log aggregation & anomaly detection scripts for SSH and web server logs, focused on brute‑force & suspicious IP activity.
+                        </p>
+                        <a href="https://github.com/its-roxio" class="project-link" target="_blank" rel="noopener">
+                            view on GitHub →
+                        </a>
+                    </article>
+                </div>
+            </section>
+        </main>
+    </div>
 </div>
-
-<!-- INFO BLOCK BELOW TERMINALS -->
-<main class="info-main">
-    <section class="info-section">
-        <h2>Languages & Stack</h2>
-        <div class="info-grid">
-            <article class="info-card">
-                <h3>Languages</h3>
-                <p>Python ◇ Java ◇ Bash ◇ SQL</p>
-            </article>
-            <article class="info-card">
-                <h3>Operating Systems</h3>
-                <p>Linux ◇ Windows</p>
-            </article>
-            <article class="info-card">
-                <h3>Frameworks & Standards</h3>
-                <p>Metasploit ◇ SOC 2 ◇ CIS</p>
-            </article>
-            <article class="info-card">
-                <h3>Security & Networks</h3>
-                <p>OWASP Top‑10 ◇ OSI model ◇ TCP/IP ◇ Web & Network Security ◇ Team: White</p>
-            </article>
-        </div>
-    </section>
-
-    <section class="info-section" id="projects-section">
-        <h2>Projects</h2>
-        <div class="info-grid projects-grid">
-            <!-- примерные проекты, ты потом заменишь/добавишь свои -->
-            <article class="info-card project-card">
-                <h3>Traffic Sentinel</h3>
-                <p>Python ◇ Network Security</p>
-                <p class="project-desc">
-                    Packet capture & analysis tool with suspicious pattern detection, built for learning deep networking & security monitoring.
-                </p>
-                <a href="https://github.com/its-roxio" class="project-link" target="_blank" rel="noopener">
-                    view on GitHub →
-                </a>
-            </article>
-
-            <article class="info-card project-card">
-                <h3>VulnProbe</h3>
-                <p>Python ◇ Web Security</p>
-                <p class="project-desc">
-                    Lightweight scanner for common web issues: OWASP Top‑10 checks, HTTP header inspection, and simple HTML reporting.
-                </p>
-                <a href="https://github.com/its-roxio" class="project-link" target="_blank" rel="noopener">
-                    view on GitHub →
-                </a>
-            </article>
-
-            <article class="info-card project-card">
-                <h3>CredVault</h3>
-                <p>Java ◇ Crypto</p>
-                <p class="project-desc">
-                    Encrypted credential manager with strong password generation and secure local storage for developers & admins.
-                </p>
-                <a href="https://github.com/its-roxio" class="project-link" target="_blank" rel="noopener">
-                    view on GitHub →
-                </a>
-            </article>
-
-            <article class="info-card project-card">
-                <h3>LogWatch</h3>
-                <p>Bash ◇ Python ◇ Linux</p>
-                <p class="project-desc">
-                    Log aggregation & anomaly detection scripts for SSH and web server logs, focused on brute‑force & suspicious IP activity.
-                </p>
-                <a href="https://github.com/its-roxio" class="project-link" target="_blank" rel="noopener">
-                    view on GitHub →
-                </a>
-            </article>
-        </div>
-    </section>
-</main>
 
 <footer class="site-footer">
     <p>© <span id="year"></span> its_roxio — Security & IT</p>
@@ -150,94 +139,6 @@
 <script>
     // Footer year
     document.getElementById('year').textContent = new Date().getFullYear();
-
-    // LEFT: auto-typing intro terminal (Variant 1-style)
-    const introLines = [
-        {
-            cmd: "whoami",
-            output: [
-                "nickname ➤ its_roxio",
-                "team ➤ white ◇ web ◇ network ◇ security"
-            ]
-        },
-        {
-            cmd: "contact",
-            output: [
-                "github ➤ https://github.com/its-roxio",
-                "telegram ➤ @its_roxio",
-                "discord ➤ its_roxio#0000"
-            ]
-        },
-        {
-            cmd: "stack",
-            output: [
-                "langs ➤ Python ◆ Java ◆ Bash ◆ SQL",
-                "os ➤ Linux ◆ Windows",
-                "frameworks ➤ Metasploit ◆ SOC 2 ◆ CIS",
-                "focus ➤ OWASP Top‑10 ◆ OSI ◆ TCP/IP"
-            ]
-        },
-        {
-            cmd: "domains",
-            output: [
-                "security-domains ➤ web ◇ network ◇ infrastructure"
-            ]
-        }
-    ];
-
-    const typingSpeedIntro = 55;
-    const lineDelayIntro = 650;
-    const cmdDelayIntro = 900;
-
-    const introCmdEl = document.getElementById("terminal-command");
-    const introOutEl = document.getElementById("terminal-output");
-
-    let introIndex = 0;
-    let introCharIndex = 0;
-    let introIsTypingCmd = true;
-    let introOutputLineIndex = 0;
-
-    function clearIntroOutput() {
-        introOutEl.innerHTML = "";
-    }
-
-    function introLoop() {
-        const current = introLines[introIndex];
-
-        if (introIsTypingCmd) {
-            if (introCharIndex < current.cmd.length) {
-                introCmdEl.textContent += current.cmd.charAt(introCharIndex);
-                introCharIndex++;
-                setTimeout(introLoop, typingSpeedIntro);
-            } else {
-                introIsTypingCmd = false;
-                introCharIndex = 0;
-                setTimeout(introLoop, lineDelayIntro);
-            }
-        } else {
-            if (introOutputLineIndex < current.output.length) {
-                const lineText = current.output[introOutputLineIndex];
-                const lineEl = document.createElement("p");
-                lineEl.textContent = lineText;
-                introOutEl.appendChild(lineEl);
-                introOutputLineIndex++;
-                setTimeout(introLoop, lineDelayIntro);
-            } else {
-                introIndex = (introIndex + 1) % introLines.length;
-                introCmdEl.textContent = "";
-                introOutputLineIndex = 0;
-                introIsTypingCmd = true;
-
-                if (introIndex === 0) {
-                    clearIntroOutput();
-                }
-
-                setTimeout(introLoop, cmdDelayIntro);
-            }
-        }
-    }
-
-    introLoop();
 
     // RIGHT: interactive CLI-style menu terminal
     const menuOutputEl = document.getElementById("menu-output");
@@ -282,6 +183,7 @@
             const unknown = document.createElement("p");
             unknown.textContent = `unknown command ➤ ${cmdKey}`;
             menuOutputEl.appendChild(unknown);
+            menuOutputEl.scrollTop = menuOutputEl.scrollHeight;
             return;
         }
 
