@@ -1,1 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>its_roxio — Security & IT</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Portfolio of its_roxio — Security & IT specialist. Python, Java, Bash, SQL, Web & Network Security.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Hacker-style monospace -->
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<header class="site-header">
+    <div class="logo">
+        <span class="logo-mark">&gt;</span>
+        <span class="logo-text">its_roxio</span>
+    </div>
+    <nav class="nav">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contacts">Contacts</a>
+    </nav>
+</header>
 
+<main>
+    <!-- HERO: LEFT TEXT BLOCK + RIGHT TERMINAL -->
+    <section class="hero" id="top">
+        <!-- LEFT: auto-typing info block -->
+        <div class="hero-text">
+            <p class="hero-kicker">Security & IT specialist</p>
+            <h1>its_roxio</h1>
+            <p class="hero-subtitle">
+                <span id="hero-typing"></span><span class="cursor"></span>
+            </p>
+            <div class="hero-actions">
+                <a href="#projects" class="btn primary">View projects</a>
+                <a href="#contacts" class="btn ghost">Contact</a>
+            </div>
+        </div>
+
+        <!-- RIGHT: terminal-style block -->
+        <div class="hero-terminal">
+            <div class="terminal-header">
+                <span class="dot red"></span>
+                <span class="dot yellow"></span>
+                <span class="dot green"></span>
+                <span class="terminal-title">/home/its_roxio/portfolio.sh</span>
+            </div>
+            <div class="terminal-body">
+                <p>
+                    <span class="prompt">its_roxio@security-lab</span>:~$ 
+                    <span id="terminal-command"></span><span class="cursor"></span>
+                </p>
+                <div id="terminal-output"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About -->
+    <section class="section" id="about">
+        <div class="section-header">
+            <h2>About</h2>
+            <p>Short overview</p>
+        </div>
+        <div class="section-content two-columns">
+            <div>
+                <p>
+                    I am a security & IT specialist working with Linux, networks and application security.
+                    I write tools and scripts in Python, Java, Bash, and SQL to automate routine tasks and
+                    help detect vulnerabilities.
+                </p>
+                <p>
+                    My focus is on Web & Network Security, combining development with security practices:
+                    vulnerability scanning, log analysis, secure configurations and threat detection.
+                </p>
+            </div>
+            <div class="about-list">
+                <h3>Focus domains</h3>
+                <ul>
+                    <li>Web & Network Security</li>
+                    <li>Linux & Windows hardening</li>
+                    <li>Automation & scripting</li>
+                    <li>Security monitoring & incident response</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills -->
+    <section class="section" id="skills">
+        <div class="section-header">
+            <h2>Skills</h2>
+            <p>Tech stack & security profile</p>
+        </div>
+        <div class="skills-grid">
+            <div class="skill-card">
+                <h3>Languages</h3>
+                <p>Python ◇ Java ◇ Bash ◇ SQL</p>
+            </div>
+            <div class="skill-card">
+                <h3>Operating Systems</h3>
+                <p>Linux ◇ Windows</p>
+            </div>
+            <div class="skill-card">
+                <h3>Frameworks & Standards</h3>
+                <p>Metasploit ◇ SOC 2 ◇ CIS</p>
+            </div>
+            <div class="skill-card">
+                <h3>Security & Networks</h3>
+                <p>OWASP Top‑10 ◇ OSI model ◇ TCP/IP ◇ Web & Network Security ◇ Team: White</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects -->
+    <section class="section" id="projects">
+        <div class="section-header">
+            <h2>Projects</h2>
+            <p>Examples of work</p>
+        </div>
+        <div class="projects-grid">
+            <article class="project-card">
+                <div class="project-header">
+                    <h3>Traffic Sentinel</h3>
+                    <span class="project-tag">Python · Network Security</span>
+                </div>
+                <p>
+                    Packet capture & analysis tool with suspicious pattern detection, built for deep networking & security monitoring practice.
+                </p>
+                <ul class="project-meta">
+                    <li>Traffic inspection & filtering</li>
+                    <li>Basic anomaly detection</li>
+                    <li>Foundation for IDS/IPS ideas</li>
+                </ul>
+                <a class="project-link" href="https://github.com/its-roxio" target="_blank" rel="noopener">
+                    view on GitHub →
+                </a>
+            </article>
+
+            <article class="project-card">
+                <div class="project-header">
+                    <h3>VulnProbe</h3>
+                    <span class="project-tag">Python · Web Security</span>
+                </div>
+                <p>
+                    Lightweight scanner for common web issues: OWASP Top‑10 checks, HTTP header inspection, and HTML reporting.
+                </p>
+                <ul class="project-meta">
+                    <li>OWASP Top‑10 oriented checks</li>
+                    <li>Security headers inspection</li>
+                    <li>Simple reports for developers</li>
+                </ul>
+                <a class="project-link" href="https://github.com/its-roxio" target="_blank" rel="noopener">
+                    view on GitHub →
+                </a>
+            </article>
+
+            <article class="project-card">
+                <div class="project-header">
+                    <h3>CredVault</h3>
+                    <span class="project-tag">Java · Crypto</span>
+                </div>
+                <p>
+                    Encrypted credential manager with strong password generation and secure local storage for developers & admins.
+                </p>
+                <ul class="project-meta">
+                    <li>Local encrypted storage</li>
+                    <li>Strong password generator</li>
+                    <li>Security-focused UX</li>
+                </ul>
+                <a class="project-link" href="https://github.com/its-roxio" target="_blank" rel="noopener">
+                    view on GitHub →
+                </a>
+            </article>
+
+            <article class="project-card">
+                <div class="project-header">
+                    <h3>LogWatch</h3>
+                    <span class="project-tag">Bash · Python · Linux</span>
+                </div>
+                <p>
+                    Log aggregation & anomaly detection scripts for SSH and web server logs, focused on brute‑force & suspicious IP activity.
+                </p>
+                <ul class="project-meta">
+                    <li>Aggregation of SSH & web logs</li>
+                    <li>Highlight suspicious IPs</li>
+                    <li>Useful for incident response</li>
+                </ul>
+                <a class="project-link" href="https://github.com/its-roxio" target="_blank" rel="noopener">
+                    view on GitHub →
+                </a>
+            </article>
+        </div>
+    </section>
+
+    <!-- Contacts -->
+    <section class="section" id="contacts">
+        <div class="section-header">
+            <h2>Contacts</h2>
+            <p>How to reach me</p>
+        </div>
+        <div class="contacts-grid">
+            <div class="contact-card">
+                <span class="contact-label">GitHub</span>
+                <a href="https://github.com/its-roxio" target="_blank" rel="noopener">
+                    its-roxio
+                </a>
+            </div>
+            <div class="contact-card">
+                <span class="contact-label">Telegram</span>
+                <a href="https://t.me/its_roxio" target="_blank" rel="noopener">
+                    @its_roxio
+                </a>
+            </div>
+            <div class="contact-card">
+                <span class="contact-label">Discord</span>
+                <span>its_roxio#0000</span>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="site-footer">
+    <p>© <span id="year"></span> its_roxio — Security & IT</p>
+</footer>
+
+<script>
+    // Footer year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // HERO auto-typing text (left block) with 30s delay before clearing
+    const heroLines = [
+        "security ◇ web ◇ network",
+        "team ➤ white ◆ offensive & defensive mindset",
+        "stack ➤ Python ◆ Java ◆ Bash ◆ SQL",
+        "OS ➤ Linux ◆ Windows ◇ tools ➤ Metasploit ◆ SOC 2 ◆ CIS"
+    ];
+
+    const heroEl = document.getElementById("hero-typing");
+    const typingSpeedHero = 55;
+    const linePauseHero = 900;
+    const cyclePauseHero = 30000;
+
+    let heroLineIndex = 0;
+    let heroCharIndex = 0;
+    let heroIsTyping = true;
+
+    function clearHero() {
+        heroEl.textContent = "";
+    }
+
+    function heroLoop() {
+        const currentLine = heroLines[heroLineIndex];
+
+        if (heroIsTyping) {
+            if (heroCharIndex < currentLine.length) {
+                heroEl.textContent += currentLine.charAt(heroCharIndex);
+                heroCharIndex++;
+                setTimeout(heroLoop, typingSpeedHero);
+            } else {
+                heroIsTyping = false;
+                heroCharIndex = 0;
+                setTimeout(heroLoop, linePauseHero);
+            }
+        } else {
+            // переключаемся на следующую строку
+            heroLineIndex = (heroLineIndex + 1) % heroLines.length;
+            heroEl.textContent = "";
+            heroIsTyping = true;
+
+            // если цикл вернулся к первой строке — даём тексту висеть 30 сек перед очисткой
+            if (heroLineIndex === 0) {
+                setTimeout(clearHero, cyclePauseHero);
+            }
+
+            setTimeout(heroLoop, cyclePauseHero);
+        }
+    }
+
+    heroLoop();
+
+    // Terminal auto-typing (right block) — можно оставить как раньше или упростить:
+    const terminalLines = [
+        {
+            cmd: "whoami",
+            output: [
+                "nickname ➤ its_roxio",
+                "role     ➤ security & it specialist"
+            ]
+        },
+        {
+            cmd: "skills",
+            output: [
+                "langs    ➤ Python ◆ Java ◆ Bash ◆ SQL",
+                "OS       ➤ Linux ◆ Windows"
+            ]
+        },
+        {
+            cmd: "security",
+            output: [
+                "frameworks ➤ Metasploit ◆ SOC 2 ◆ CIS",
+                "focus      ➤ OWASP Top‑10 ◆ OSI ◆ TCP/IP ◆ Web & Network Security"
+            ]
+        },
+        {
+            cmd: "contact",
+            output: [
+                "github   ➤ https://github.com/its-roxio",
+                "telegram ➤ @its_roxio",
+                "discord  ➤ its_roxio#0000"
+            ]
+        }
+    ];
+
+    const typingSpeedTerminal = 55;
+    const lineDelayTerminal = 650;
+    const cmdDelayTerminal = 1200;
+
+    const terminalCmdEl = document.getElementById("terminal-command");
+    const terminalOutEl = document.getElementById("terminal-output");
+
+    let terminalIndex = 0;
+    let terminalCharIndex = 0;
+    let terminalIsTypingCmd = true;
+    let terminalOutputLineIndex = 0;
+
+    function clearTerminalOutput() {
+        terminalOutEl.innerHTML = "";
+    }
+
+    function terminalLoop() {
+        const current = terminalLines[terminalIndex];
+
+        if (terminalIsTypingCmd) {
+            if (terminalCharIndex < current.cmd.length) {
+                terminalCmdEl.textContent += current.cmd.charAt(terminalCharIndex);
+                terminalCharIndex++;
+                setTimeout(terminalLoop, typingSpeedTerminal);
+            } else {
+                terminalIsTypingCmd = false;
+                terminalCharIndex = 0;
+                setTimeout(terminalLoop, lineDelayTerminal);
+            }
+        } else {
+            if (terminalOutputLineIndex < current.output.length) {
+                const lineText = current.output[terminalOutputLineIndex];
+                const lineEl = document.createElement("p");
+                lineEl.textContent = lineText;
+                terminalOutEl.appendChild(lineEl);
+                terminalOutputLineIndex++;
+                setTimeout(terminalLoop, lineDelayTerminal);
+            } else {
+                terminalIndex = (terminalIndex + 1) % terminalLines.length;
+                terminalCmdEl.textContent = "";
+                terminalOutputLineIndex = 0;
+                terminalIsTypingCmd = true;
+
+                if (terminalIndex === 0) {
+                    clearTerminalOutput();
+                }
+
+                setTimeout(terminalLoop, cmdDelayTerminal);
+            }
+        }
+    }
+
+    terminalLoop();
+</script>
+</body>
+</html>
